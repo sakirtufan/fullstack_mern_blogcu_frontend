@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   CssBaseline,
   Container,
@@ -18,6 +18,8 @@ import {
   Redirect,
 } from "react-router-dom";
 import { PostsList } from "./components/PostsList";
+import AddPostForm from "./components/AddPostForm";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,6 +37,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const App = () => {
+
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  }
+  const handleClose = () => {
+    setOpen(false);
+  }
+  
+
   const classes = useStyles();
   return (
     <>
@@ -54,7 +67,7 @@ const App = () => {
             >
               <a href="https://localhost:3000/posts">Blogcu</a>
             </Typography>
-            <Button color="primary" variant="outlined" startIcon={<PenIcon />}>
+            <Button color="primary" variant="outlined" startIcon={<PenIcon />} onClick={handleOpen}>
               Add new post
             </Button>
           </Toolbar>
@@ -69,6 +82,8 @@ const App = () => {
           </Router>
         </Grid>
       </Container>
+
+      <AddPostForm open={open} handleClose={handleClose} />
     </>
   );
 };
