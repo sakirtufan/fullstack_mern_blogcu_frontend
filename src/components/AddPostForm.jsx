@@ -17,6 +17,7 @@ import {
   TextField,
 } from "@material-ui/core";
 import { useDispatch } from "react-redux";
+import { createPost } from "../redux/actions/post"
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -46,8 +47,8 @@ const AddPostForm = ({ open, handleClose }) => {
   });
 
   const onSubmit = (data) => {
-    console.log({...data, file});
-    // dispatch(createPost({ ...data, image: file }));
+    // console.log({...data, file});
+    dispatch(createPost({ ...data, image: file }));
     clearForm();
   };
 
