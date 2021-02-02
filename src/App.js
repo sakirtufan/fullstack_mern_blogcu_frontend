@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   CssBaseline,
   Container,
@@ -19,6 +19,8 @@ import {
 } from "react-router-dom";
 import { PostsList } from "./components/PostsList";
 import AddPostForm from "./components/AddPostForm";
+import { useDispatch } from "react-redux";
+import { fetchPosts } from "./redux/actions/post";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -37,6 +39,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const App = () => {
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchPosts())
+
+  }, [dispatch])
 
   const [open, setOpen] = useState(false);
 
