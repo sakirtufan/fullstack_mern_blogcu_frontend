@@ -1,5 +1,5 @@
 import axios from "axios";
-const apiEndpoint = "http://localhost:8000/posts/";
+const apiEndpoint = "https://blogcu-backend.herokuapp.com/posts/";
 
 export const fetchPosts = async () => await axios.get(apiEndpoint);
 

@@ -70,7 +70,7 @@ const App = () => {
               color="secondary"
               className={classes.title}
             >
-              <a href="http://localhost:3000/posts">Blogcu</a>
+              <a href="https://blogcu-frontend.herokuapp.com/posts">Blogcu</a>
             </Typography>
             <Button
               color="primary"
