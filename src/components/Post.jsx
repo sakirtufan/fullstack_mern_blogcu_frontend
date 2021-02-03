@@ -1,4 +1,13 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Chip, makeStyles, Typography } from "@material-ui/core";
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Chip,
+  makeStyles,
+  Typography,
+} from "@material-ui/core";
 import moment from "moment";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -28,16 +37,19 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Post = ({ _id, title, subtitle, content, tag, image, createdAt }) => {
-  
   const convertRelativeTime = (date) => {
     return moment(date).fromNow();
-  }
+  };
 
   const classes = useStyles();
 
   return (
     <Card className={classes.root}>
-      <CardMedia className={classes.media} image={image || noImage} title="image" />
+      <CardMedia
+        className={classes.media}
+        image={image || noImage}
+        title="image"
+      />
       <div className={classes.overlay}>
         <Typography variant="h6">Sakir</Typography>
         <Typography variant="body2">
@@ -48,13 +60,13 @@ const Post = ({ _id, title, subtitle, content, tag, image, createdAt }) => {
         <Typography variant="h6" component="p" gutterBottom>
           {title}
         </Typography>
-        <Typography variant="overline" component="p"  gutterBottom>
+        <Typography variant="overline" component="p" gutterBottom>
           {subtitle}
         </Typography>
         <Typography variant="body2" component="p" gutterBottom>
-          {content.substring(0,250)+ "..."}
+          {content.substring(0, 250) + "..."}
         </Typography>
-        <Chip label={` # ${tag}`} variant="outlined" className={classes.chip}/>
+        <Chip label={` # ${tag}`} variant="outlined" className={classes.chip} />
       </CardContent>
       <CardActions>
         <Button size="small" color="primary">

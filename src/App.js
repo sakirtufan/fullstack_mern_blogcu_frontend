@@ -23,7 +23,6 @@ import { useDispatch } from "react-redux";
 import { fetchPosts } from "./redux/actions/post";
 import PostDetails from "./components/PostDetails";
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -40,22 +39,19 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const App = () => {
-
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchPosts())
-
-  }, [dispatch])
+    dispatch(fetchPosts());
+  }, [dispatch]);
 
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
     setOpen(true);
-  }
+  };
   const handleClose = () => {
     setOpen(false);
-  }
-  
+  };
 
   const classes = useStyles();
   return (
@@ -74,9 +70,14 @@ const App = () => {
               color="secondary"
               className={classes.title}
             >
-              <a href="https://localhost:3000/posts">Blogcu</a>
+              <a href="http://localhost:3000/posts">Blogcu</a>
             </Typography>
-            <Button color="primary" variant="outlined" startIcon={<PenIcon />} onClick={handleOpen}>
+            <Button
+              color="primary"
+              variant="outlined"
+              startIcon={<PenIcon />}
+              onClick={handleOpen}
+            >
               Add new post
             </Button>
           </Toolbar>

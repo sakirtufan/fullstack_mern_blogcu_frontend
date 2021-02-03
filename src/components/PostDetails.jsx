@@ -64,7 +64,7 @@ const PostDetails = ({ history, location, match }) => {
   return (
     <Paper className={classes.paper} elevation={0}>
       {editMode ? (
-        <EditPostForm post={currentPost} closeEditMode={closeEditMode}/>
+        <EditPostForm post={currentPost} closeEditMode={closeEditMode} />
       ) : (
         <div>
           <div className={classes.header}>
