@@ -53,7 +53,7 @@ const EditPostForm = ({ history, post, closeEditMode }) => {
       <form noValidate autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
         <TextField
           id="title"
-          label="Başlık"
+          label="Title"
           name="title"
           variant="outlined"
           className={classes.textField}
@@ -65,7 +65,7 @@ const EditPostForm = ({ history, post, closeEditMode }) => {
         />
         <TextField
           id="subtitle"
-          label="Alt Başlık"
+          label="Subtitle"
           name="subtitle"
           variant="outlined"
           className={classes.textField}
@@ -92,7 +92,7 @@ const EditPostForm = ({ history, post, closeEditMode }) => {
         />
         <TextField
           id="content"
-          label="İçerik"
+          label="Content"
           name="content"
           multiline
           size="small"
