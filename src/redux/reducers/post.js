@@ -28,6 +28,18 @@ export const postReducer = (state = initialState, action) => {
           posts: state.posts.filter(post => post._id !== action.payload),
           currentPost:null,
         };
+        case types.UPDATE_POST:
+          return {
+            ...state,
+            posts: state.posts.map((post) => {
+              if (post._id === action.payload._id) {
+                return action.payload;
+              } else {
+                return post;
+              }
+            }),
+            currentPost: action.payload,
+          };
 
     default:
       return {

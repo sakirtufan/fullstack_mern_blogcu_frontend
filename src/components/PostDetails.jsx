@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
@@ -7,6 +7,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { fetchSinglePost, deletePost } from "../redux/actions/post";
 import noImage from "../images/noimage.svg";
+import EditPostForm from "./EditPostForm";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -37,6 +38,15 @@ const PostDetails = ({ history, location, match }) => {
 
   const currentPost = useSelector((state) => state.posts.currentPost);
 
+  const [editMode, setEditMode] = useState(false);
+
+  const openEditMode = () => {
+    setEditMode(true);
+  };
+  const closeEditMode = () => {
+    setEditMode(false);
+  };
+
   useEffect(() => {
     dispatch(fetchSinglePost(id));
   }, [dispatch, id]);
@@ -53,54 +63,59 @@ const PostDetails = ({ history, location, match }) => {
   const classes = useStyles();
   return (
     <Paper className={classes.paper} elevation={0}>
-      <div>
-        <div className={classes.header}>
-          <Typography variant="h5" gutterBottom>
-            {currentPost?.title}
+      {editMode ? (
+        <EditPostForm post={currentPost} closeEditMode={closeEditMode}/>
+      ) : (
+        <div>
+          <div className={classes.header}>
+            <Typography variant="h5" gutterBottom>
+              {currentPost?.title}
+            </Typography>
+            <div>
+              <Button
+                color="primary"
+                variant="outlined"
+                startIcon={<EditIcon />}
+                onClick={openEditMode}
+              >
+                Edit
+              </Button>{" "}
+              <Button
+                color="secondary"
+                variant="outlined"
+                onClick={removePost}
+                startIcon={<DeleteIcon />}
+              >
+                Delete
+              </Button>
+            </div>
+          </div>
+
+          <Divider />
+          <Typography variant="overline" gutterBottom>
+            {currentPost?.subtitle}
           </Typography>
-          <div>
-            <Button
-              color="primary"
-              variant="outlined"
-              startIcon={<EditIcon />}             
-            >
-              Edit
-            </Button>{" "}
-            <Button
-              color="secondary"
-              variant="outlined"
-              onClick={removePost}
-              startIcon={<DeleteIcon />}
-            >
-              Delete
-            </Button>
+          <Typography variant="caption" component="p" gutterBottom>
+            {convertRelativeTime(currentPost?.createdAt)} by Sakir
+          </Typography>
+          <Chip
+            label={`# ${currentPost?.tag}`}
+            variant="outlined"
+            className={classes.chip}
+          />
+
+          <div className={classes.content}>
+            <img
+              src={currentPost?.image || noImage}
+              alt="Post"
+              className={classes.image}
+            />
+            <Typography variant="body1" gutterBottom>
+              {currentPost?.content}
+            </Typography>
           </div>
         </div>
-
-        <Divider />
-        <Typography variant="overline" gutterBottom>
-          {currentPost?.subtitle}
-        </Typography>
-        <Typography variant="caption" component="p" gutterBottom>
-          {convertRelativeTime(currentPost?.createdAt)} by Sakir
-        </Typography>
-        <Chip
-          label={`# ${currentPost?.tag}`}
-          variant="outlined"
-          className={classes.chip}
-        />
-
-        <div className={classes.content}>
-          <img
-            src={currentPost?.image || noImage}
-            alt="Post"
-            className={classes.image}
-          />
-          <Typography variant="body1" gutterBottom>
-            {currentPost?.content}
-          </Typography>
-        </div>
-      </div>
+      )}
     </Paper>
   );
 };
