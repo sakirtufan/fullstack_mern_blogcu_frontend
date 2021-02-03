@@ -24,3 +24,28 @@ export const createPost = (post) => async (dispatch) => {
     console.log(error);
   }
 }
+
+
+export const fetchSinglePost = (id) => async (dispatch) => {
+  try {
+    const response = await api.fetchSinglePost(id);
+    dispatch({
+      type: types.FETCH_SINGLE_POST,
+      payload: response.data,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const deletePost = (id) => async (dispatch) => {
+  try {
+    const { data } = await api.deletePost(id);
+    dispatch({
+      type: types.DELETE_POST,
+      payload: data._id,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};

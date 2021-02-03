@@ -21,6 +21,7 @@ import { PostsList } from "./components/PostsList";
 import AddPostForm from "./components/AddPostForm";
 import { useDispatch } from "react-redux";
 import { fetchPosts } from "./redux/actions/post";
+import PostDetails from "./components/PostDetails";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -83,7 +84,8 @@ const App = () => {
         <Grid container className={classes.container}>
           <Router>
             <Switch>
-              <Route exact path="/posts" component={PostsList}/>
+              <Route exact path="/posts" component={PostsList} />
+              <Route exact path="/posts/:id" component={PostDetails} />
             </Switch>
 
             <Redirect from="/" to="/posts" />
