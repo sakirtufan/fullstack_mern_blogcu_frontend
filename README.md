@@ -1,6 +1,7 @@
 <h1 style="text-align:center,font-size:30px" ><b>BLOGCU</b></h1>
 
 [Projektwebsite](https://blogcu-frontend.herokuapp.com/)
+* Klicken Sie [hier](https://github.com/sakirtufan/fullstack_mern_blogcu_backend), um die Struktur und Verwendung des Backend-Codes anzuzeigen
 
 ![](https://github.com/sakirtufan/fullstack_mern_blogcu_frontend/blob/master/src/images/Webp.net-gifmaker%20(4).gif)
 
@@ -10,16 +11,10 @@ Dieses Projekt befindet sich noch in der Entwicklung - PRs, Beiträge und Proble
 
 ## Programmfunktionen
 Ich habe die Blogger-Website mit dem React-Framework erstellt. Sie können den Blog-Beitrag auf dieser Website hinzufügen, löschen oder ändern. Ich habe die folgenden Technologien verwendet, um diese Website zu vervollständigen.
-## Einstieg
 
-So starten Sie die Website lokal:
-* Klonen Sie dieses Repo
-* `npm install` um alle erforderlichen Abhängigkeiten zu installieren
-* Klicken Sie [hier](https://github.com/sakirtufan/fullstack_mern_blogcu_backend), um die Struktur und Verwendung des Backend-Codes anzuzeigen
-* `npm run start` to start the local server
 
-## Codeübersicht
-### Abhängigkeiten
+
+## Abhängigkeiten
 * [React](https://reactjs.org/)
 * [Redux](https://redux.js.org/)
 * [React Redux](https://react-redux.js.org/)
