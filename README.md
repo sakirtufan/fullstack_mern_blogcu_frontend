@@ -1,16 +1,14 @@
 <h1 style="text-align:center,font-size:30px" ><b>BLOGCU</b></h1>
 
-[Projektwebsite](https://blogcu-frontend.herokuapp.com/)
-* Klicken Sie [hier](https://github.com/sakirtufan/fullstack_mern_blogcu_backend), um die Struktur und Verwendung des Backend-Codes anzuzeigen
+[Projektwebsite](https://blogcu-frontend.herokuapp.com/)<br/><br/>
+Dieses Projekt befindet sich noch in der Entwicklung - PRs, Beiträge und Probleme sind willkommen!<br/><br/>
+Klicken Sie [hier](https://github.com/sakirtufan/fullstack_mern_blogcu_backend), um die Struktur und Verwendung des Backend-Codes anzuzeigen<br/><br/><br/><br/>
 
-![](https://github.com/sakirtufan/fullstack_mern_blogcu_frontend/blob/master/src/images/Webp.net-gifmaker%20(4).gif)
+![](https://github.com/sakirtufan/fullstack_mern_blogcu_frontend/blob/master/src/images/Webp.net-gifmaker%20(4).gif)<br/><br/><br/>
 
-
-
-Dieses Projekt befindet sich noch in der Entwicklung - PRs, Beiträge und Probleme sind willkommen!
 
 ## Programmfunktionen
-Ich habe die Blogger-Website mit dem React-Framework erstellt. Sie können den Blog-Beitrag auf dieser Website hinzufügen, löschen oder ändern. Ich habe die folgenden Technologien verwendet, um diese Website zu vervollständigen.
+Ich habe die Blogger-Website mit dem React-Framework erstellt. Sie können den Blog-Beitrag auf dieser Website hinzufügen, löschen oder ändern. Ich habe die folgenden Technologien verwendet, um diese Website zu vervollständigen.<br/>
 
 
 
